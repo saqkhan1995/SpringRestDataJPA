@@ -1,10 +1,8 @@
 package com.wildbeancoffee.friends.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Set;
 
 @Entity
 public class Friend {
@@ -16,9 +14,17 @@ public class Friend {
   private String firstName;
   private String lastName;
 
-  public Friend(String firstName, String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+
+  //This is a forward reference.. Now create a back reference in Friend Class
+  @OneToMany(mappedBy = "friend")
+  private Set<Address> addresses;
+
+  public Set<Address> getAddresses() {
+    return addresses;
+  }
+
+  public void setAddresses(Set<Address> addresses) {
+    this.addresses = addresses;
   }
 
   public Friend() {
