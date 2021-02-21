@@ -5,4 +5,4 @@
 # Used JSR-380 Validation API (things like @NotNull, @NotBlank etc.)
 # Unit Test Cases (System, Integration Mock)
 # Hateoas -> Add spring-boot-starter-data-rest dependency & delete Controller layer.. endpoint name is pluralized
-# used Associations liek One-to-many
+# used Associations like One-to-many
